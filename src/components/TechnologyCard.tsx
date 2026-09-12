@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type iTechnology from '../Types/TechnologyTypes';
-import { TiTick } from 'react-icons/ti';
 import { FaCheck } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 interface technologyCardProps{
     technology: iTechnology;
+    selectedStacks:[];
+    setSelectedStacks: Dispatch<SetStateAction<iTechnology[]>>
 }
 
-const TechnologyCard = ({technology}:technologyCardProps) => {
+const TechnologyCard = ({technology,selectedStacks,setSelectedStacks}:technologyCardProps) => {
     const [isAddToStack,setIsAddToStack] = useState(false);
+    const handleSelectedStacks = ()=>{
+
+    setIsAddToStack(true);
+    const newSelectedStacks = [...selectedStacks,technology]
+    setSelectedStacks(newSelectedStacks)
+    //console.log(newSelectedStacks)
+     toast.success("Added to Stack");
+    }
     return (
          <div className={`${isAddToStack === true ? 'card bg-white border border-[#D91B7E] rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow' : 'card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full'} `}>
                                     
@@ -46,10 +55,7 @@ const TechnologyCard = ({technology}:technologyCardProps) => {
                                     </div>
                                   
                                    
-                                    <button disabled={isAddToStack === true ? true:false} onClick={()=>{setIsAddToStack(true)
-                                        toast.success("Added to Stack")
-                                        
-                                    }} className={`${isAddToStack === true ? 'btn text-[#D91B7E]' : 'w-full btn btn-sm h-10 bg-gray-900 hover:bg-gray-800 text-white border-none rounded-lg normal-case text-sm font-medium mt-auto'}`}>
+                                    <button disabled={isAddToStack === true ? true:false} onClick={handleSelectedStacks} className={`${isAddToStack === true ? 'btn text-[#D91B7E]' : 'w-full btn btn-sm h-10 bg-gray-900 hover:bg-gray-800 text-white border-none rounded-lg normal-case text-sm font-medium mt-auto'}`}>
                                        {isAddToStack && <FaCheck className="text-lg" />}  
                                        
                                        {isAddToStack === true ? `Added to Stack` : " Add to Stack"}
