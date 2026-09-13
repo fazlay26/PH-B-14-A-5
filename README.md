@@ -22,7 +22,7 @@ Ans: Props is passing data from parent components to child components.
 State means temporary memory where we can store some information to render components by changing the data.
 
 ## What does the useState hook do, and where did you use it in this project?
-Ans : useState hook actually do store the data and re-render the data according to the variable value. in my projects i use useState to impolement hamburger menu, add to cart button functionality.
+Ans : useState hook actually do store the data and re-render the data according to the variable value. in my projects i use useState to impolement hamburger menu, add to cart button functionality..
 
 ## What does the useEffect hook do, and why did you need it to load the JSON data?
 Ans: useEffect hook is used if i have to do something after the components render then we can use useEffect hook. to load JSON data we use UseEffect because first we have to load the components,after render the components then load the JSON data.
