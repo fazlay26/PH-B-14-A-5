@@ -9,7 +9,10 @@ interface technologyProps {
 
 const Technology = ({ technologyPromise }: technologyProps) => {
     const technologyFetchData = use(technologyPromise);
-     const [selectedStacks,setSelectedStacks] = useState([])
+    const [selectedStacks,setSelectedStacks] = useState([])
+     
+
+     
 
     return (
         <div className="w-full bg-white py-16 px-6 md:px-12">

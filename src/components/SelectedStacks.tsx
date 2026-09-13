@@ -5,11 +5,23 @@ import { RxCross1 } from 'react-icons/rx';
 interface SelectedStacksProps {
     selectedStacks: iTechnology[];
     setSelectedStacks: Dispatch<SetStateAction<iTechnology[]>>;
-    technologyFetchData: iTechnology[]
 }
 
-const SelectedStacks = ({ selectedStacks, setSelectedStacks, technologyFetchData }: SelectedStacksProps) => {
-    console.log(selectedStacks);
+const SelectedStacks = ({ selectedStacks, setSelectedStacks }: SelectedStacksProps) => {
+    
+    //console.log(selectedStacks);
+    const handleRemoveTech = (selectedStack:iTechnology) =>{
+
+     
+      const afterRemoveTechStacks = selectedStacks.filter((stack)=>stack.name !== selectedStack.name);
+        setSelectedStacks(afterRemoveTechStacks);
+       
+    }
+    const handleRemoveAll = () =>{
+       setSelectedStacks([])
+    }
+   
+    
 
     return (
         // Main Container matching the card design
@@ -52,7 +64,7 @@ const SelectedStacks = ({ selectedStacks, setSelectedStacks, technologyFetchData
 
                             {/* Right Side: Remove (X) Button */}
                             {/* Note: Functionality add korbo na bole ekhane sudhu design diyechi */}
-                            <button className="text-gray-400 hover:text-gray-600 transition-colors">
+                            <button onClick={()=>{handleRemoveTech(selectedStack)}} className="text-gray-400 hover:text-gray-600 transition-colors">
                                 <RxCross1 />
                             </button>
                         </div>
@@ -69,7 +81,7 @@ const SelectedStacks = ({ selectedStacks, setSelectedStacks, technologyFetchData
 
             {/* Remove All Button */}
             {selectedStacks.length > 0 && (
-                <button className="w-full btn btn-sm h-10 bg-white hover:bg-gray-50 text-red-500 border border-red-200 rounded-lg normal-case text-sm font-medium mt-auto">
+                <button onClick={handleRemoveAll} className="w-full btn btn-sm h-10 bg-white hover:bg-gray-50 text-red-500 border border-red-200 rounded-lg normal-case text-sm font-medium mt-auto">
                     Remove All
                 </button>
             )}
