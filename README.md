@@ -1,76 +1,37 @@
-# React + TypeScript + Vite
+# Dev Stack
+This project is all about adding technology stack into cart and then later delete the item. purpose of this project is understanding React Components,props,JSX,fetch data,usestate,use and etc.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology that I use:
+- React
+- Tailwind
+- React Toastify
+- React Icon
+- Daisy UI
 
-Currently, two official plugins are available:
+## 3 features about your project
+- i can add technology stack into my cart
+- then delete the individual card on the selected stacks.
+- the projects is fully responsive
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# React questions
+## What is JSX, and why is it used in React?
+Ans: JSX is Like Html but not actual HTML. by use JSX we can write JS code into HTML elements.
 
-## React Compiler
+## What is the difference between props and state?
+Ans: Props is passing data from parent components to child components. 
+State means temporary memory where we can store some information to render components by changing the data.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## What does the useState hook do, and where did you use it in this project?
+Ans : useState hook actually do store the data and re-render the data according to the variable value. in my projects i use useState to impolement hamburger menu, add to cart button functionality.
 
-## Expanding the ESLint configuration
+## What does the useEffect hook do, and why did you need it to load the JSON data?
+Ans: useEffect hook is used if i have to do something after the components render then we can use useEffect hook. to load JSON data we use UseEffect because first we have to load the components,after render the components then load the JSON data.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Why does every item in a .map() list need a unique key prop?
+Ans : Because react use unique key to understand where the changes happen in the website. then simply compare to the previous DOM and update the DOM by using unique key.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## What is conditional rendering? Show one place you used it 
+Ans : Conditional rendering means to show something based on condition. in my project i use conditional rendering in many parts such as selected stacks, hamburger menu.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-# PH-B-14-A-5
+## How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+Ans: To pass data from parent component to child i have used props. but in react child can not send data to parent. react works only one directional. parent to child. if child need to send data to parent then we simply use the concept lifting up state. 
