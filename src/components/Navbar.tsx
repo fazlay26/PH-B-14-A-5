@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import  { useState } from 'react';
 import { RxCross2, RxHamburgerMenu } from 'react-icons/rx';
 
 const Navbar = () => {

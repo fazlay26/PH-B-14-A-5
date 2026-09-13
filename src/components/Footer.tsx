@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Footer = () => {
     return (
@@ -8,7 +7,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
                     
                     <div className="lg:col-span-2 space-y-5 pr-8">
-                        {/* Logo Section */}
+                       
                         <div className="flex items-center gap-2">
                             <img src="/src/assets/logo-text.png" alt="Logo" className="h-8" />
                             

@@ -1,4 +1,4 @@
-import React, { useState, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type iTechnology from '../Types/TechnologyTypes';
 import { RxCross1 } from 'react-icons/rx';
 
@@ -24,7 +24,7 @@ const SelectedStacks = ({ selectedStacks, setSelectedStacks }: SelectedStacksPro
     
 
     return (
-        // Main Container matching the card design
+       
         <div className="card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm sticky top-6">
             
             {/* Header Section */}
@@ -35,7 +35,7 @@ const SelectedStacks = ({ selectedStacks, setSelectedStacks }: SelectedStacksPro
                     : "No technologies selected yet."}
             </p>
 
-            {/* Selected Items List */}
+            
             <div className="flex flex-col gap-3 mb-6">
                 {
                     selectedStacks.map((selectedStack,index) => (
@@ -43,7 +43,7 @@ const SelectedStacks = ({ selectedStacks, setSelectedStacks }: SelectedStacksPro
                             key={index} 
                             className="flex items-center justify-between p-3 border border-gray-100 rounded-xl bg-white shadow-sm"
                         >
-                            {/* Left Side: Icon and Name */}
+                            
                             <div className="flex items-center gap-3">
                                 <div className="w-6 h-6 flex items-center justify-center">
                                     <img 
@@ -62,8 +62,7 @@ const SelectedStacks = ({ selectedStacks, setSelectedStacks }: SelectedStacksPro
                                 </div>
                             </div>
 
-                            {/* Right Side: Remove (X) Button */}
-                            {/* Note: Functionality add korbo na bole ekhane sudhu design diyechi */}
+                            
                             <button onClick={()=>{handleRemoveTech(selectedStack)}} className="text-gray-400 hover:text-gray-600 transition-colors">
                                 <RxCross1 />
                             </button>
@@ -72,14 +71,14 @@ const SelectedStacks = ({ selectedStacks, setSelectedStacks }: SelectedStacksPro
                 }
             </div>
 
-            {/* Empty State (Optional: Jodi list empty hoy) */}
+           
             {selectedStacks.length === 0 && (
                 <div className="w-full h-32 border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center bg-gray-50/50 mb-6">
                     <p className="text-sm text-gray-400">Your stack is empty.</p>
                 </div>
             )}
 
-            {/* Remove All Button */}
+            
             {selectedStacks.length > 0 && (
                 <button onClick={handleRemoveAll} className="w-full btn btn-sm h-10 bg-white hover:bg-gray-50 text-red-500 border border-red-200 rounded-lg normal-case text-sm font-medium mt-auto">
                     Remove All

@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import  { use, useState } from 'react';
 import type iTechnology from '../Types/TechnologyTypes';
 import TechnologyCard from './TechnologyCard';
 import SelectedStacks from './SelectedStacks';
@@ -9,7 +9,7 @@ interface technologyProps {
 
 const Technology = ({ technologyPromise }: technologyProps) => {
     const technologyFetchData = use(technologyPromise);
-    const [selectedStacks,setSelectedStacks] = useState([])
+    const [selectedStacks,setSelectedStacks] = useState<iTechnology[]>([])
      
 
      
@@ -43,7 +43,7 @@ const Technology = ({ technologyPromise }: technologyProps) => {
                    
                     <div>
                        
-                        <SelectedStacks technologyFetchData={technologyFetchData} selectedStacks={selectedStacks} setSelectedStacks={setSelectedStacks} />
+                        <SelectedStacks  selectedStacks={selectedStacks} setSelectedStacks={setSelectedStacks} />
                     </div>
                     
 

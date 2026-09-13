@@ -55,7 +55,7 @@ const TechnologyCard = ({ technology, selectedStacks, setSelectedStacks }: techn
                 </div>
             </div>
           
-            {/* ৩. বাটনের ডিজাইন isSelected এর উপর ভিত্তি করে */}
+           
             <button 
                 disabled={isSelected} 
                 onClick={handleSelectedStacks} 
