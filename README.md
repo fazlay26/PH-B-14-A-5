@@ -15,7 +15,7 @@ This project is all about adding technology stack into cart and then later delet
 
 # React questions
 ## What is JSX, and why is it used in React?
-Ans: JSX is Like Html but not actual HTML. by use JSX we can write JS code into HTML elements.
+Ans: JSX is Like Html but not actual HTML. by use JSX we can write JS code into HTML elements..
 
 ## What is the difference between props and state?
 Ans: Props is passing data from parent components to child components. 
